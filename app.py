@@ -124,7 +124,10 @@ def start_stream():
     # Start FFmpeg
     subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    stream_url = "http://127.0.0.1:5000/static/stream/stream.m3u8"
+    # ✅ Use dynamic base URL (works locally & on Render)
+    base_url = request.host_url.rstrip("/")
+    stream_url = f"{base_url}/static/stream/stream.m3u8"
+
     return jsonify({"stream_url": stream_url})
 
 
@@ -136,5 +139,6 @@ def stream_file(filename):
 # ================= MAIN ===================
 
 if __name__ == "__main__":
-    print("✅ Flask backend running at http://127.0.0.1:5000")
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))  # ✅ use Render's dynamic port
+    print(f"✅ Flask backend running on port {port}")
+    app.run(host="0.0.0.0", port=port)
