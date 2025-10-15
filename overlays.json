@@ -1,0 +1,38 @@
+[
+  {
+    "streamId": "default",
+    "type": "text",
+    "position": {
+      "x": 0.05,
+      "y": 0.05
+    },
+    "size": {
+      "w": 0.2,
+      "h": 0.1
+    },
+    "zIndex": 1,
+    "visible": true,
+    "content": {
+      "text": "LIVE"
+    },
+    "_id": "1"
+  },
+  {
+    "streamId": "default",
+    "type": "image",
+    "position": {
+      "x": 0.26590909090909093,
+      "y": 0.028925619834710745
+    },
+    "size": {
+      "w": 0.2,
+      "h": 0.1
+    },
+    "zIndex": 1,
+    "visible": true,
+    "content": {
+      "url": "/uploads/example.png"
+    },
+    "_id": "2"
+  }
+]
